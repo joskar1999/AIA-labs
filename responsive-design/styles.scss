@@ -1,0 +1,171 @@
+$font-size: 16px;
+$default-margin: 16px;
+$default-padding: 16px;
+$tablet: 600px;
+$desktop: 1024px;
+$min-desktop: 1025px;
+$full-height: 100%;
+$default-size: 20px;
+$light-yellow: #E0E4CC;
+$blue: #69D2E7;
+$orange: #F38630;
+$pink: #E9AEAF;
+
+* {
+    font-size: $font-size;
+    font-family: Verdana;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: black;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+html {
+    height: $full-height;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: $full-height;
+
+    .content-container {
+        flex: 1 0 auto;
+
+        header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: $default-padding * 2;
+
+            .title-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                #logo {
+                    width: $default-size * 3;
+                    height: $default-size * 3;
+                }
+
+                #page-title {
+                    font-size: $font-size * 2;
+                    font-weight: bold;
+                    margin-left: $default-margin;
+
+                    @media all and (max-width: $tablet) {
+                        display: none;
+                    }
+                }
+            }
+
+            .navbar {
+                display: flex;
+                flex-grow: 2;
+                align-self: flex-start;
+                justify-content: flex-end;
+
+                a {
+                    width: $default-size * 4;
+
+                    @media all and (max-width: $desktop) {
+                        display: none;
+                    }
+                }
+
+                #burger {
+                    width: $default-size * 3;
+                    height: $default-size * 3;
+
+                    @media all and (min-width: $min-desktop) {
+                        display: none;
+                    }
+
+                }
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            padding: $default-padding;
+
+            .article {
+                display: flex;
+                flex-direction: column;
+                margin: $default-margin;
+                width: 100%;
+                border: 2px solid black;
+                background-color: #E0E4CC;
+
+                .title-item {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+
+                    h1 {
+                        display: flex;
+                        justify-content: center;
+                        font-size: $font-size * 1.5;
+                        width: 50%;
+                        padding: $default-padding / 2;
+                        border-bottom: 2px solid black;
+                        border-left: 2px solid black;
+                    }
+
+                    .first-header {
+                        background-color: $blue;
+                    }
+
+                    .second-header {
+                        background-color: $orange;
+                    }
+
+                    .third-header {
+                        background-color: $pink;
+                    }
+                }
+
+                .article-text {
+                    text-align: justify;
+                    padding: $default-padding;
+                }
+            }
+
+            @media all and (max-width: $desktop) {
+                flex-wrap: wrap;
+
+                .article:first-child {
+                    flex: 0 1 100%;
+                }
+
+                .article {
+                    flex: 1 0 30%;
+                }
+            }
+
+            @media all and (max-width: $tablet) {
+                flex-wrap: wrap;
+            }
+        }
+
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        background-color: #E0E4CC;
+        height: $default-size * 5;
+        border-top: 2px solid black;
+        margin-top: $default-margin;
+
+        #name {
+            font-weight: bold;
+        }
+    }
+}
