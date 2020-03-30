@@ -71,7 +71,6 @@ body .content-container header .navbar #burger {
 }
 body .content-container main {
   display: flex;
-  flex-direction: row;
   padding: 16px;
 }
 body .content-container main .article {
@@ -122,7 +121,10 @@ body .content-container main .article .article-text {
 }
 @media all and (max-width: 600px) {
   body .content-container main {
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  body .content-container main .article {
+    width: auto;
   }
 }
 body footer {
