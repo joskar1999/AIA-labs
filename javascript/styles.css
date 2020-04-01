@@ -1,0 +1,10 @@
+.table__item,
+.author__row,
+.title__row {
+    width: 200px;
+    padding: 4px;
+}
+
+tr:nth-child(2n) {
+    background-color: lightgrey;
+}
