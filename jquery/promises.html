@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>promises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    ></script>
+    <script>
+      function callEndpoint(url) {
+        return new Promise(function(resolve, reject) {
+          var req = new XMLHttpRequest();
+          req.open("GET", url, true);
+
+          req.onload = function() {
+            if (req.status === 200) {
+              resolve(req.response);
+            } else {
+              reject("status code different than 200");
+            }
+          };
+
+          req.onerror = function(error) {
+            reject(error);
+          };
+
+          req.send();
+        });
+      }
+
+      $(function() {
+        $("#fetch").click(() => {
+          callEndpoint("AJAXselectors.html")
+            .then(resp => {
+              $("#content").html(resp);
+            })
+            .catch(err => console.log(err));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="fetch">fetch data</button>
+    <div id="content"></div>
+  </body>
+</html>
