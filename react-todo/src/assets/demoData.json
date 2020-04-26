@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "title": "Rychu Peja",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "rating": 6,
+    "image": "https://e-kolo.pl/uploads/news/54194989f10ea_o_full.jpg"
+  },
+  {
+    "id": 1,
+    "title": "Jan Router III",
+    "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness",
+    "rating": 9,
+    "image": "https://www.wykop.pl/cdn/c3201142/comment_dyTV7YgRrriBtdXUuk8oQ3GmXYvZGFtQ.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Dawid Sulicki",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia",
+    "rating": 7,
+    "image": "https://i1.kwejk.pl/k/obrazki/2019/10/TpjuYPwRjXCgwl91.jpg"
+  }
+]

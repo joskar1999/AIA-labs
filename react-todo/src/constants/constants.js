@@ -1,0 +1,16 @@
+export const pageTitle = 'Kolekcja niczego'
+export const maxRating = 10;
+export const editLabel = 'Edytuj';
+export const deleteLabel = 'Usuń';
+export const saveLabel = 'Zapisz';
+export const titleLabel = 'Tytuł';
+export const descriptionLabel = 'Opis';
+export const imagePath = 'Link do zdjęcia';
+export const ratingLabel = 'Rating';
+export const addItem = 'Dodaj element';
+export const searchHint = 'Szukaj...';
+export const ratingAscending = '1-10';
+export const ratingDescending = '10-1';
+export const alphabetic = 'A-Z';
+export const alphabeticReverse = 'Z-A'
+export const noSort = 'Domyślnie';
