@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Koszyk</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item"><a href="/products">Produkty</a></li>
+            <li class="main-header__item"><a href="/cart" class="active">Koszyk</a></li>
+            <li class="cart-icon"></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="cart-section__container">
+        <div class="cart__container">
+            <% for(let product of products) { %>
+                <div class="cart-item">
+                    <img class="cart-image"
+                         src="<%= product.imagePath %>" alt="Image">
+                    <div class="cart__data-container">
+                        <div class="card-header">
+                            <h2><%= product.name %></h2>
+                        </div>
+                        <div class="card__description">
+                            <h3 class="product__price"><%= product.price %>PLN</h3>
+                        </div>
+                    </div>
+                    <div class="cart-item__action-container">
+                        <form class="card-form" action="/remove-from-cart" method="post">
+                            <input type="hidden" name="productId" value="<%= product.id %>">
+                            <button class="cart__delete-button" type="submit">Usuń</button>
+                        </form>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        <div class="checkout__container">
+            <h2>Podsumowanie</h2>
+            <h3>Cena: <%= price %>PLN</h3>
+            <form class="card-form" action="/create-order" method="post">
+                <button class="order-cta" type="submit">Złóż zamówienie</button>
+            </form>
+            <form class="card-form" action="/remove-all" method="post">
+                <button class="order-cta" type="submit">Usuń wszystko</button>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+
+</html>

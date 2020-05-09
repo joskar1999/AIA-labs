@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Produkty</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item"><a href="/products" class="active">Produkty</a></li>
+            <li class="main-header__item"><a href="/cart">Koszyk</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="products__container">
+        <% for(let product of products) { %>
+            <div class="card product-item">
+                <div class="card__header">
+                    <h2><%= product.name %></h2>
+                </div>
+                <div class="card__image">
+                    <img src="<%= product.imagePath %>"
+                         alt="Image">
+                </div>
+                <div class="card__description">
+                    <h3 class="product__price"><%= product.price %>PLN</h3>
+                    <p class="product__description"><%= product.description %></p>
+                </div>
+                <div class="card__buttons">
+                    <form class="card-form" action="/add-to-cart" method="POST">
+                        <input type="hidden" name="productId" value="<%= product.id %>">
+                        <button class="button__add-to-cart" type="submit">Dodaj do koszyka</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</main>
+</body>
+
+</html>
