@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 app.use(productsRoutes);
 app.use(cartRoutes);
 
-app.use((req, res, next) => {
+app.get('/', (req, res, next) => {
   res.render('main', {});
 });
 
